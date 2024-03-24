@@ -27,12 +27,13 @@ export class NinjasService {
 
     createNinja(createNinjaDto: CreateNinjaDto){
         const newNinja = {
-            ...CreateNinjaDto,
+            ...createNinjaDto,
             id: Date.now(),
         };
+      
         this.ninjas.push(newNinja)
 
-        return newNinja
+        
     }
 
     updateNinja(id: number, updateNinjaDto: UpdateNinjaDto){
@@ -45,6 +46,12 @@ export class NinjasService {
         return this.getNinja(id)
     }
 
-    
+    removeNinja(id: number){
+        const toBeRemoved = this.getNinja(id);
+
+        this.ninjas = this.ninjas.filter((ninja)=> ninja.id !== id)
+
+        return toBeRemoved; 
+    }
 
 }

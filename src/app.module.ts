@@ -4,7 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppService } from './app.service';
 import { NinjasModule } from './ninjas/ninjas.module';
 import { UsersModule } from './users/users.module';
-import { NinjaSchema } from './ninjas/schema/schema';
+import { NinjaSchema } from './ninjas/schema/ninja.schema';
 
 @Module({
   imports: [
